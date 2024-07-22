@@ -2,8 +2,13 @@
 
 - create react app
 - configured tailwind CSS
+- Router
 - Header
 - Login form
+- Sign up form
+- Form validation
+- useRef()
+- Error handling
 
 # Feature
     - Login/Signup
