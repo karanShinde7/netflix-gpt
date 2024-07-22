@@ -37,4 +37,12 @@
         - Email and password
         - Google sign-in
         - GitHub sign-in
-    -When enabling these methods, ensure that cross-origin plugins are disabled if present at the time of enabling.
+    - When enabling these methods, ensure that cross-origin plugins are disabled if present at the time of enabling.
+    - Hit firebase login command in VS Code console, if it throws an error follow following steps
+        - search for powershell.
+        - right click and run as administration.
+        - run this simple command "Set-ExecutionPolicy RemoteSigned"
+        - Press A And Enter.
+        - go to code and run npm i <YOUR_MODULE>.
+        - press Enter.
+    - Enter "firebase init" command for the configuration.
