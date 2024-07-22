@@ -2,6 +2,11 @@ import React, { useRef, useState } from "react";
 import Header from "../header/header";
 import { NETFLIX_BG_IMAGE_URL } from "../../utils/urls";
 import { checkValidation } from "../../utils/validation";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../utils/firebaseConfig";
 
 const Login = () => {
   const [showSignIn, setShowSignIn] = useState(true);
@@ -18,9 +23,39 @@ const Login = () => {
   const handleButtonClick = (e) => {
     // when we are using form, on button click form submit method will get trigger. To provent that we can use e.preventDefault()
     e.preventDefault();
-    setErrorMsg(
-      checkValidation(email?.current?.value, password?.current?.value)
-    );
+    const emailIp = email?.current?.value;
+    const passwordIp = password?.current?.value;
+    const errMsg = checkValidation(emailIp, passwordIp);
+    setErrorMsg(errMsg);
+
+    if (errMsg) return;
+
+    // signin or singup
+    if (!showSignIn) {
+      // sign up logic
+      createUserWithEmailAndPassword(auth, emailIp, passwordIp)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          localStorage.setItem("UserData", user);
+          console.log("User", user);
+        })
+        .catch((error) => {
+          setErrorMsg(`Error: ${error.code}: ${error.message}`);
+        });
+    } else {
+      // sign in logic
+      signInWithEmailAndPassword(auth, emailIp, passwordIp)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          localStorage.setItem("UserData", user);
+          console.log("Sign in", user);
+        })
+        .catch((error) => {
+          setErrorMsg(`Error: ${error.code}: ${error.message}`);
+        });
+    }
   };
 
   return (

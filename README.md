@@ -51,3 +51,7 @@
     - npm run build
     - To deploy we can use the command "firebase deploy"
         - click on Hosting URL 
+    - Fireabse sign up (email - password)
+        - https://firebase.google.com/docs/auth/web/password-auth
+        - use "createUserWithEmailAndPassword" for register and signInWithEmailAndPassword login api
+        - use modular api
