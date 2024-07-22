@@ -46,3 +46,8 @@
         - go to code and run npm i <YOUR_MODULE>.
         - press Enter.
     - Enter "firebase init" command for the configuration.
+        - while running this cmd there will be few questions, choose options as per the requirement
+    - After initialization and configuration we can hit the command for build
+    - npm run build
+    - To deploy we can use the command "firebase deploy"
+        - click on Hosting URL 
