@@ -11,6 +11,8 @@
 - Error handling
 - Firebase installation
 - Redux management with redux tool kit
+- Firbase based user authentication (sign in, sign up, sign out, update)
+- useNavigate()
 
 # Feature
     - Login/Signup
@@ -23,7 +25,6 @@
             - Title & Description
             - Suggestions
                 - Movie list
-                
     - Netflix GPT
         - search bar
         - movie suggestions
