@@ -16,7 +16,13 @@
 - block user if not signed in.
 - unsubscribed to the onAuthStateChanged()
 - Register for TMDB API, Create an APP & get the access token
-- Get API integration
+- Get Movie API integration
+- Get Trailer API integration
+- Custom hook for both APIs
+- Setup redux for movie
+- Embedded the youtube video and autoplay
+- Tailwind CSS 
+
 
 # Feature
     - Login/Signup
