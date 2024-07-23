@@ -14,6 +14,7 @@
 - Firbase based user authentication (sign in, sign up, sign out, update)
 - useNavigate()
 - block user if not signed in.
+- unsubscribed to the onAuthStateChanged()
 
 # Feature
     - Login/Signup
