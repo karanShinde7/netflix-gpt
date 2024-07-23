@@ -4,3 +4,4 @@ export const NETFLIX_LOGO_IMAGE_URL = "https://cdn.cookielaw.org/logos/dd6b162f-
 
 // APIS
 export const GET_NOW_PLAYING_MOVIES_URL = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
+export const GET_MAIN_MOVIE_TRAILER_URL = 'https://api.themoviedb.org/3/movie/';
