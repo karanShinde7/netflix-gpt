@@ -13,6 +13,7 @@
 - Redux management with redux tool kit
 - Firbase based user authentication (sign in, sign up, sign out, update)
 - useNavigate()
+- block user if not signed in.
 
 # Feature
     - Login/Signup
