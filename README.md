@@ -15,6 +15,8 @@
 - useNavigate()
 - block user if not signed in.
 - unsubscribed to the onAuthStateChanged()
+- Register for TMDB API, Create an APP & get the access token
+- Get API integration
 
 # Feature
     - Login/Signup

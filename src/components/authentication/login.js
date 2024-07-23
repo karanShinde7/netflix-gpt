@@ -45,7 +45,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log("User", user);
           updateProfile(user, {
             displayName: name?.current?.value,
           })
@@ -68,7 +67,6 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           const { uid, email, displayName } = user;
-          console.log("Sign in", user);
           dispatch(
             addUser({ uid: uid, email: email, displayName: displayName })
           );
