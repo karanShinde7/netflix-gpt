@@ -7,10 +7,16 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../../utils/firebaseConfig";
+import { useNavigate } from "react-router-dom";
+
+// creds
+// karan@gmail.com
+// Karan123$
 
 const Login = () => {
   const [showSignIn, setShowSignIn] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -39,6 +45,7 @@ const Login = () => {
           const user = userCredential.user;
           localStorage.setItem("UserData", user);
           console.log("User", user);
+          navigate("/browse");
         })
         .catch((error) => {
           setErrorMsg(`Error: ${error.code}: ${error.message}`);
@@ -51,6 +58,7 @@ const Login = () => {
           const user = userCredential.user;
           localStorage.setItem("UserData", user);
           console.log("Sign in", user);
+          navigate("/browse");
         })
         .catch((error) => {
           setErrorMsg(`Error: ${error.code}: ${error.message}`);

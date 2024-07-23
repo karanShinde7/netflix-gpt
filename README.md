@@ -10,6 +10,7 @@
 - useRef()
 - Error handling
 - Firebase installation
+- Redux management with redux tool kit
 
 # Feature
     - Login/Signup
