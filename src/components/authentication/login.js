@@ -5,9 +5,12 @@ import { checkValidation } from "../../utils/validation";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../../utils/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../redux/slice/userSlice";
 
 // creds
 // karan@gmail.com
@@ -17,6 +20,7 @@ const Login = () => {
   const [showSignIn, setShowSignIn] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -43,9 +47,19 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          localStorage.setItem("UserData", user);
           console.log("User", user);
-          navigate("/browse");
+          updateProfile(user, {
+            displayName: name?.current?.value,
+          })
+            .then((response) => {
+              const { uid, email, displayName } = auth.currentUser;
+              // do not get above values from "user" as it may not be updatedm so take it from auth
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName })
+              );
+              navigate("/browse");
+            })
+            .catch(() => {});
         })
         .catch((error) => {
           setErrorMsg(`Error: ${error.code}: ${error.message}`);
@@ -56,7 +70,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          localStorage.setItem("UserData", user);
           console.log("Sign in", user);
           navigate("/browse");
         })
