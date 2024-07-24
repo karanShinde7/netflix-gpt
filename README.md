@@ -27,7 +27,11 @@
 - Movie list
 - Image CDN for TMDB
 - Scrollbar styling (custom)
-
+- GPT Search filter
+- Multi language feature
+- GPT API integration 
+- env file
+- memoization
 
 # Feature
     - Login/Signup
@@ -72,3 +76,9 @@
         - https://firebase.google.com/docs/auth/web/password-auth
         - use "createUserWithEmailAndPassword" for register and signInWithEmailAndPassword login api
         - use modular api
+
+# GPT API INTEGRATION
+    - Go to https://platform.openai.com/
+    - Go to API preference > Create new secrete key
+    - In the save pop up, copy API key  (once done you cannot access it again)
+    - It may charge so keep it secrete
