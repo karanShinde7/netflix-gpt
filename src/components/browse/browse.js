@@ -6,8 +6,12 @@ import usePopularMovies from "../../hooks/usePopularMovies";
 import useUpcomingMovies from "../../hooks/useUpcomingMovies";
 import MainContainer from "./mainContainer";
 import SecondaryContainer from "./secondaryContainer";
+import GptContainer from "./gpt/gptContainer";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
+  const showSearchView = useSelector((state) => state.gptSearch.showGptSearch);
+
   // API call with custom hook
   useNowPlayingMovies();
   useTopRatedMovies();
@@ -17,8 +21,14 @@ const Browse = () => {
   return (
     <div>
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {showSearchView ? (
+        <GptContainer />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };

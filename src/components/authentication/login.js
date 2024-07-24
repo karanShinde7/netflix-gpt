@@ -8,8 +8,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../utils/firebaseConfig";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../redux/slice/userSlice";
+import { langaugeString } from "../../utils/languageConstants";
 
 // creds
 // karan@gmail.com
@@ -20,6 +21,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
 
+  const language = useSelector((state) => state.config.language);
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -85,42 +87,42 @@ const Login = () => {
       </div>
       <form className="w-3/12 absolute p-12 bg-black my-36 mx-auto left-0 right-0 text-white rounded-lg bg-opacity-80">
         <h1 className="font-bold text-3xl py-4">
-          {showSignIn ? "Sign In" : "Sign Up"}
+          {showSignIn ? langaugeString[language].SignIn : langaugeString[language].SignUp}
         </h1>
         {!showSignIn && (
           <input
             className="p-4 my-4 w-full bg-gray-700 rounded-lg"
             type="text"
             ref={name}
-            placeholder="Full name"
+            placeholder={`${langaugeString[language].FullName}`}
           />
         )}
         <input
           className="p-4 my-4 w-full bg-gray-700 rounded-lg"
           type="text"
           ref={email}
-          placeholder="Email address"
+          placeholder={`${langaugeString[language].Email}`}
         />
         <input
           className="p-4 my-4 w-full bg-gray-700 rounded-lg"
           type="password"
           ref={password}
-          placeholder="Password"
+          placeholder={`${langaugeString[language].Password}`}
         />
         <p className="text-red-600 py-2  text-lg font-bold">{errorMsg}</p>
         <button
           className="p-4 my-4 bg-red-700 w-full rounded-lg"
           onClick={handleButtonClick}
         >
-          {showSignIn ? "Sign In" : "Sign Up"}
+          {showSignIn ? langaugeString[language].SignIn : langaugeString[language].SignUp}
         </button>
         <p className="py-6">
-          {showSignIn ? "New to Netflix? " : "Already registered? "}
+          {showSignIn ? langaugeString[language].NewToNetflix : langaugeString[language].AlreadyRegistered}
           <span
             className="hover:font-extrabold cursor-pointer"
             onClick={toggleSignInForm}
           >
-            Sign {showSignIn ? "up" : "in"} now.
+            {showSignIn ? langaugeString[language].SignUpNow : langaugeString[language].SignInNow}
           </span>
         </p>
       </form>

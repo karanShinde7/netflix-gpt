@@ -1,6 +1,9 @@
 import React from "react";
+import { langaugeString } from "../../utils/languageConstants";
+import { useSelector } from "react-redux";
 
 const VideoTitle = ({ original_title, overview }) => {
+  const language = useSelector((state) => state.config.language);
 
   return (
     <div className="w-screen aspect-video absolute pt-[25%] px-24 text-white bg-gradient-to-r from-black">
@@ -13,7 +16,7 @@ const VideoTitle = ({ original_title, overview }) => {
             src={require("../../assets/icons/play.png")}
             alt="play-icon"
           />{" "}
-          Play
+          {langaugeString[language].Play}
         </button>
         <button className="mx-3 flex items-center justify-center bg-gray-600 bg-opacity-50 text-white p-2 px-12 text-lg text-center rounded-md hover:bg-opacity-80">
           <img
@@ -21,7 +24,7 @@ const VideoTitle = ({ original_title, overview }) => {
             src={require("../../assets/icons/info.png")}
             alt="info-icon"
           />{" "}
-          More Info
+          {langaugeString[language].MoreInfo}
         </button>
       </div>
     </div>
