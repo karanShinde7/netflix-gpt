@@ -22,6 +22,11 @@
 - Setup redux for movie
 - Embedded the youtube video and autoplay
 - Tailwind CSS 
+- Secondary component
+- Movie card
+- Movie list
+- Image CDN for TMDB
+- Scrollbar styling (custom)
 
 
 # Feature
