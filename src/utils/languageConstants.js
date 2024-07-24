@@ -20,6 +20,9 @@ export const langaugeString = {
     Browse: "Browse",
     GPTSearch: "GPT Search",
     SignOut: "Sign Out",
+    SearchResult: "Search Results",
+    Clear:"Clear"
+    
   },
   hindi: {
     SignIn: "साइन इन करें",
@@ -42,6 +45,8 @@ export const langaugeString = {
     Browse: "ब्राउज़ करें",
     GPTSearch: "GPT खोज",
     SignOut: "साइन आउट",
+    SearchResult: "खोज के परिणाम",
+    Clear:"साफ़ करें",
   },
   marathi: {
     SignIn: "साइन इन करा",
@@ -64,6 +69,8 @@ export const langaugeString = {
     Browse: "ब्राउझ करा",
     GPTSearch: "GPT शोधा",
     SignOut: "साइन आउट",
+    SearchResult: "शोध परिणाम",
+    Clear:"साफ करा",
   },
 };
 

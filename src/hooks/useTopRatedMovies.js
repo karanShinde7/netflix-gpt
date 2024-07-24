@@ -1,14 +1,15 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GET_TOP_RATED_MOVIES_URL } from "../utils/urls";
 import { GET_API_OPTION } from "../utils/apiConstants";
 import { addTopRatedMovies } from "../redux/slice/movieSlice";
 
 const useTopRatedMovies = () => {
   const dispatch = useDispatch();
+  const topRated = useSelector((state) => state.movies?.topRatedMovies)
 
   useEffect(() => {
-    getTopRatedMovies();
+    if(!topRated) getTopRatedMovies();
   }, []);
 
   const getTopRatedMovies = async () => {

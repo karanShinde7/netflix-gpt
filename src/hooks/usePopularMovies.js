@@ -1,14 +1,15 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GET_POPULAR_MOVIES_URL } from "../utils/urls";
 import { GET_API_OPTION } from "../utils/apiConstants";
 import { addPopularMovies } from "../redux/slice/movieSlice";
 
 const usePopularMovies = () => {
   const dispatch = useDispatch();
+  const popular = useSelector((state) => state.movies?.popularMovies)
 
   useEffect(() => {
-    getPopularMovies();
+    if(!popular) getPopularMovies();
   }, []);
 
   const getPopularMovies = async () => {

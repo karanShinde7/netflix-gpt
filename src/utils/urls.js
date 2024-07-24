@@ -9,3 +9,4 @@ export const GET_TOP_RATED_MOVIES_URL = 'https://api.themoviedb.org/3/movie/top_
 export const GET_UPCOMING_MOVIES_URL = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 export const GET_MAIN_MOVIE_TRAILER_URL = 'https://api.themoviedb.org/3/movie/';
 export const GET_TMDB_IMAGE_PATH ='https://image.tmdb.org/t/p/w500/';
+export const GET_MOVIES_URL = 'https://api.themoviedb.org/3/search/movie?';

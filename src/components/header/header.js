@@ -60,7 +60,7 @@ const Header = () => {
       {user && (
         <div className="flex p-2">
           <select
-            className="p-2 bg-gray-500 text-white m-2"
+            className="p-2 bg-gray-900 rounded-md text-white m-2"
             onChange={handleLanguageChange}
           >
             {supportedLanguages.map((language) => {
