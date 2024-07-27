@@ -1,3 +1,7 @@
+# Deployment
+- https://unique-souffle-aeb7ad.netlify.app/
+- Using Netlifly
+
 # Netflix GPT
 
 - create react app
